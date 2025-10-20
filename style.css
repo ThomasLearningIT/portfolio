@@ -1,6 +1,6 @@
-/* ------------------------------
-   Variables principales
------------------------------- */
+/* ============================================================
+   VARIABLES PRINCIPALES
+============================================================ */
 :root {
   --bg: #0f172a;
   --card: #0b1220;
@@ -14,11 +14,12 @@
   --text: #e6eef8;
 }
 
-/* ------------------------------
-   Base
------------------------------- */
+/* ============================================================
+   BASE
+============================================================ */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; }
+
 body {
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   background: #071020;
@@ -46,9 +47,9 @@ p, li { font-size: 15px; color: var(--text); }
 .muted { color: var(--muted); }
 strong { color: var(--accent); }
 
-/* ------------------------------
-   Header / Navigation
------------------------------- */
+/* ============================================================
+   HEADER / NAVIGATION
+============================================================ */
 .site-header {
   position: sticky;
   top: 0;
@@ -63,7 +64,13 @@ strong { color: var(--accent); }
   justify-content: space-between;
   padding: 14px 0;
 }
-.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text);
+}
 .logo-img {
   width: 36px;
   height: 36px;
@@ -72,7 +79,13 @@ strong { color: var(--accent); }
   border: 2px solid var(--accent);
 }
 .brand { font-weight: 700; font-size: 16px; }
-.nav-list { list-style: none; display: flex; gap: 14px; align-items: center; }
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
 .nav-list a {
   color: var(--muted);
   text-decoration: none;
@@ -89,33 +102,75 @@ strong { color: var(--accent); }
   border-radius: 8px;
 }
 
-/* ------------------------------
-   Hero (Accueil)
------------------------------- */
+/* ============================================================
+   HERO (Accueil)
+============================================================ */
 .hero {
   padding: 60px 0 40px;
+  background: linear-gradient(180deg, #0b1220 0%, #071020 100%);
 }
 .hero-inner {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
   text-align: center;
   gap: var(--gap);
 }
 .hero-text { max-width: 700px; }
-.lead { color: var(--muted); font-size: 16px; margin-bottom: 18px; }
+.lead {
+  color: var(--muted);
+  font-size: 16px;
+  margin-bottom: 18px;
+}
 .ctas .btn { margin-right: 10px; }
 
-/* ------------------------------
-   Section générique
------------------------------- */
-.section { padding: 50px 0; }
+/* ============================================================
+   SECTIONS GÉNÉRIQUES
+============================================================ */
+.section { padding: 60px 0; }
 .section.alt { background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent); }
+section { scroll-margin-top: 100px; }
 
-/* ------------------------------
-   Timeline (Parcours)
------------------------------- */
+/* ============================================================
+   PRÉSENTATION
+============================================================ */
+#presentation p {
+  max-width: 850px;
+  margin-bottom: 14px;
+}
+#presentation h2 {
+  color: var(--accent);
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+/* ============================================================
+   FORMATION ACTUELLE
+============================================================ */
+#formation {
+  background: rgba(255, 255, 255, 0.015);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+#formation h2 {
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+#formation ul {
+  margin-left: 20px;
+  margin-bottom: 16px;
+}
+
+/* ============================================================
+   PARCOURS
+============================================================ */
+.parcours-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 30px;
+  align-items: start;
+}
 .timeline {
   display: flex;
   flex-direction: column;
@@ -124,30 +179,12 @@ strong { color: var(--accent); }
   border-left: 2px solid var(--accent);
   padding-left: 18px;
 }
-.timeline-item {
-  position: relative;
-}
-.timeline-item::before {
-  content: none;
-}
 .year {
-  display: inline-block;
   font-weight: 600;
   color: var(--accent-2);
   font-size: 14px;
   margin-bottom: 4px;
 }
-/* ══════════════════════════════════════════════════════════
-   Parcours Grid - Deux colonnes côte à côte
-══════════════════════════════════════════════════════════ */
-.parcours-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-top: 30px;
-  align-items: start;
-}
-
 .parcours-column h3 {
   color: var(--accent);
   font-size: 20px;
@@ -156,64 +193,70 @@ strong { color: var(--accent); }
   border-bottom: 2px solid var(--accent);
 }
 
-/* Responsive : une seule colonne sur mobile */
-@media (max-width: 900px) {
-  .parcours-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
+/* ============================================================
+   MÉTIERS VISÉS
+============================================================ */
+#metiers {
+  background: rgba(255,255,255,0.02);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
+#metiers h2 {
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+#metiers .muted {
+  margin-bottom: 18px;
+  display: block;
+}
+#metiers ul { margin-left: 20px; margin-bottom: 20px; }
+#metiers li { margin-bottom: 8px; line-height: 1.6; }
+#metiers a {
+  color: var(--accent-2);
+  font-weight: 600;
+  text-decoration: none;
+}
+#metiers a:hover { text-decoration: underline; }
 
-/* ------------------------------
-   Compétences
------------------------------- */
+/* ============================================================
+   COMPÉTENCES
+============================================================ */
 .competence-list {
   list-style: disc;
   margin-left: 20px;
   margin-bottom: 24px;
 }
-
 .competence-list li {
   margin-bottom: 8px;
   color: var(--text);
   line-height: 1.6;
 }
-
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 12px;
 }
-
 .skill {
   background: var(--glass);
   padding: 8px 12px;
   border-radius: 999px;
   font-size: 13px;
   color: var(--text);
+  border: 1px solid rgba(14,165,164,0.2);
   transition: background 0.2s;
-  border: 1px solid rgba(14, 165, 164, 0.2);
 }
-
 .skill:hover {
-  background: rgba(14, 165, 164, 0.2);
+  background: rgba(14,165,164,0.2);
   border-color: var(--accent);
 }
-
-/* Catégories de compétences */
 .competence-category {
   margin-top: 30px;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255,255,255,0.02);
   border-radius: var(--radius);
   border-left: 4px solid var(--accent);
 }
-
-.competence-category:first-of-type {
-  margin-top: 20px;
-}
-
 .competence-category h3 {
   color: var(--accent);
   font-size: 18px;
@@ -221,18 +264,9 @@ strong { color: var(--accent); }
   font-weight: 600;
 }
 
-.competence-category .competence-list {
-  margin-top: 12px;
-  margin-bottom: 0;
-}
-
-.competence-category .skills-grid {
-  margin-bottom: 0;
-}
-
-/* ------------------------------
-   Projets (Portfolio)
------------------------------- */
+/* ============================================================
+   PROJETS
+============================================================ */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -250,32 +284,64 @@ strong { color: var(--accent); }
   transform: translateY(-4px);
   box-shadow: 0 8px 22px rgba(0,0,0,0.45);
 }
-.card h3 { margin-top: 0; }
-.meta {
-  color: var(--muted);
-  font-size: 13px;
-  margin: 6px 0;
-}
+.card h3 { color: var(--accent-2); }
+.meta { color: var(--muted); font-size: 13px; margin: 6px 0; }
 .links a {
   color: var(--accent);
   text-decoration: none;
   font-weight: 600;
-  margin-right: 10px;
   font-size: 13px;
 }
 .links a:hover { text-decoration: underline; }
 
-/* ------------------------------
-   Veille
------------------------------- */
+/* ============================================================
+   CERTIFICATIONS
+============================================================ */
+#certifications h2 { color: var(--accent); margin-bottom: 18px; }
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+#certifications .card h3 { color: var(--accent-2); }
+#certifications .meta { font-size: 13px; color: var(--muted); }
+
+/* ============================================================
+   VEILLE TECHNOLOGIQUE
+============================================================ */
 #veille p {
   max-width: 800px;
   margin-bottom: 12px;
 }
+.veille-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0 30px;
+  font-size: 14px;
+}
+.veille-table th, .veille-table td {
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 10px 14px;
+  text-align: left;
+}
+.veille-table th {
+  background: rgba(14,165,164,0.1);
+  color: var(--accent);
+  font-weight: 600;
+}
+.veille-table tr:nth-child(even) {
+  background: rgba(255,255,255,0.02);
+}
+.rounded-img {
+  width: 100%;
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+}
 
-/* ------------------------------
-   Formulaires & Boutons
------------------------------- */
+/* ============================================================
+   CONTACT / FORMULAIRES
+============================================================ */
 form label {
   display: block;
   margin-bottom: 10px;
@@ -294,11 +360,9 @@ textarea { resize: vertical; }
 .form-actions {
   display: flex;
   gap: 10px;
-  align-items: center;
   flex-wrap: wrap;
   margin-top: 12px;
 }
-
 .btn {
   display: inline-block;
   padding: 10px 14px;
@@ -322,9 +386,9 @@ textarea { resize: vertical; }
 }
 .btn.ghost:hover { background: rgba(14,165,164,0.1); }
 
-/* ------------------------------
-   Footer
------------------------------- */
+/* ============================================================
+   FOOTER
+============================================================ */
 .site-footer {
   padding: 20px 0;
   text-align: center;
@@ -332,23 +396,14 @@ textarea { resize: vertical; }
   border-top: 1px solid rgba(255,255,255,0.05);
   font-size: 13px;
 }
-
-.site-footer a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.site-footer a:hover {
-  text-decoration: underline;
-}
-
+.site-footer a { color: var(--accent); text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }
 .social-links {
   display: flex;
   gap: 15px;
   justify-content: center;
   margin-top: 10px;
 }
-
 .social-links a {
   display: inline-flex;
   align-items: center;
@@ -356,21 +411,19 @@ textarea { resize: vertical; }
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255,255,255,0.05);
   color: var(--muted);
   transition: all 0.3s ease;
 }
-
 .social-links a:hover {
   color: var(--accent);
-  background: rgba(14, 165, 164, 0.1);
+  background: rgba(14,165,164,0.1);
   transform: translateY(-3px);
 }
 
-
-/* ------------------------------
-   Responsive
------------------------------- */
+/* ============================================================
+   RESPONSIVE
+============================================================ */
 @media (max-width: 900px) {
   .grid { grid-template-columns: 1fr; }
   #nav-toggle { display: inline-block; }
@@ -386,4 +439,5 @@ textarea { resize: vertical; }
     width: 220px;
   }
   .nav-list.show { display: flex; }
+  .parcours-grid { grid-template-columns: 1fr; gap: 30px; }
 }

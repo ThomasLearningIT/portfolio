@@ -1,3 +1,4 @@
+
 /* ============================================================
    VARIABLES PRINCIPALES
 ============================================================ */
@@ -7,7 +8,7 @@
   --muted: #94a3b8;
   --accent: #0ea5a4;
   --accent-2: #06b6d4;
-  --glass: rgba(255,255,255,0.03);
+  --glass: rgba(255, 255, 255, 0.03);
   --max-width: 1100px;
   --radius: 12px;
   --gap: 20px;
@@ -38,15 +39,15 @@ body {
 h1, h2, h3, h4 {
   font-weight: 700;
   line-height: 1.3;
-  color: #ffffff; /* Tous les titres en blanc */
+  color: #ffffff;
 }
+
 h1 { font-size: 32px; margin-bottom: 8px; }
 h2 { font-size: 24px; margin-bottom: 12px; }
 h3 { font-size: 18px; margin-bottom: 8px; }
-
 p, li { font-size: 15px; color: var(--text); }
 .muted { color: var(--muted); }
-strong, a { color: var(--accent); }
+strong, a { color: var(--accent); text-decoration: none; }
 
 /* ============================================================
    HEADER / NAVIGATION
@@ -54,24 +55,26 @@ strong, a { color: var(--accent); }
 .site-header {
   position: sticky;
   top: 0;
-  background: rgba(3,7,12,0.7);
+  background: rgba(3, 7, 12, 0.7);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(255,255,255,0.05);
   z-index: 50;
 }
+
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 14px 0;
 }
+
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  text-decoration: none;
   color: var(--text);
 }
+
 .logo-img {
   width: 36px;
   height: 36px;
@@ -79,7 +82,6 @@ strong, a { color: var(--accent); }
   object-fit: cover;
   border: 2px solid var(--accent);
 }
-.brand { font-weight: 700; font-size: 16px; }
 
 .nav-list {
   list-style: none;
@@ -87,13 +89,15 @@ strong, a { color: var(--accent); }
   gap: 14px;
   align-items: center;
 }
+
 .nav-list a {
   color: var(--muted);
-  text-decoration: none;
   font-size: 14px;
   transition: color 0.2s;
 }
+
 .nav-list a:hover { color: var(--accent); }
+
 #nav-toggle {
   display: none;
   background: none;
@@ -104,12 +108,13 @@ strong, a { color: var(--accent); }
 }
 
 /* ============================================================
-   HERO (Accueil)
+   HERO
 ============================================================ */
 .hero {
   padding: 60px 0 40px;
   background: linear-gradient(180deg, #0b1220 0%, #071020 100%);
 }
+
 .hero-inner {
   display: flex;
   flex-direction: column;
@@ -117,50 +122,17 @@ strong, a { color: var(--accent); }
   text-align: center;
   gap: var(--gap);
 }
+
 .hero-text { max-width: 700px; }
-.lead {
-  color: var(--muted);
-  font-size: 16px;
-  margin-bottom: 18px;
-}
+.lead { color: var(--muted); font-size: 16px; margin-bottom: 18px; }
 .ctas .btn { margin-right: 10px; }
 
 /* ============================================================
-   SECTIONS GÉNÉRIQUES
+   SECTIONS
 ============================================================ */
 .section { padding: 60px 0; }
 .section.alt { background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent); }
 section { scroll-margin-top: 100px; }
-
-/* ============================================================
-   PRÉSENTATION PERSONNELLE
-============================================================ */
-#presentation p {
-  max-width: 850px;
-  margin-bottom: 14px;
-}
-#presentation h2 {
-  color: #ffffff;
-  margin-bottom: 24px;
-  text-align: left;
-}
-
-/* ============================================================
-   FORMATION ACTUELLE
-============================================================ */
-#formation {
-  background: rgba(255, 255, 255, 0.015);
-  border-top: 1px solid rgba(255,255,255,0.05);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-#formation h2 {
-  color: #ffffff;
-  margin-bottom: 18px;
-}
-#formation ul {
-  margin-left: 20px;
-  margin-bottom: 16px;
-}
 
 /* ============================================================
    PARCOURS
@@ -172,6 +144,7 @@ section { scroll-margin-top: 100px; }
   margin-top: 30px;
   align-items: start;
 }
+
 .timeline {
   display: flex;
   flex-direction: column;
@@ -180,12 +153,8 @@ section { scroll-margin-top: 100px; }
   border-left: 2px solid var(--accent);
   padding-left: 18px;
 }
-.year {
-  font-weight: 600;
-  color: var(--accent-2);
-  font-size: 14px;
-  margin-bottom: 4px;
-}
+
+.year { font-weight: 600; color: var(--accent-2); font-size: 14px; margin-bottom: 4px; }
 .parcours-column h3 {
   color: var(--accent);
   font-size: 20px;
@@ -195,85 +164,39 @@ section { scroll-margin-top: 100px; }
 }
 
 /* ============================================================
-   MÉTIERS VISÉS
-============================================================ */
-#metiers {
-  background: rgba(255,255,255,0.02);
-  border-top: 1px solid rgba(255,255,255,0.05);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-#metiers h2 {
-  color: #ffffff;
-  margin-bottom: 16px;
-}
-#metiers .muted {
-  margin-bottom: 18px;
-  display: block;
-}
-#metiers ul { margin-left: 20px; margin-bottom: 20px; }
-#metiers li { margin-bottom: 8px; line-height: 1.6; }
-#metiers a {
-  color: var(--accent-2);
-  font-weight: 600;
-  text-decoration: none;
-}
-#metiers a:hover { text-decoration: underline; }
-
-/* ============================================================
    COMPÉTENCES
 ============================================================ */
-.competence-list {
-  list-style: disc;
-  margin-left: 20px;
-  margin-bottom: 24px;
-}
-.competence-list li {
-  margin-bottom: 8px;
-  color: var(--text);
-  line-height: 1.6;
-}
+.competence-list { list-style: disc; margin-left: 20px; margin-bottom: 24px; }
+.competence-list li { margin-bottom: 8px; line-height: 1.6; }
+
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 12px;
 }
+
 .skill {
   background: var(--glass);
   padding: 8px 12px;
   border-radius: 999px;
   font-size: 13px;
-  color: var(--text);
   border: 1px solid rgba(14,165,164,0.2);
   transition: background 0.2s;
 }
-.skill:hover {
-  background: rgba(14,165,164,0.2);
-  border-color: var(--accent);
-}
-.competence-category {
-  margin-top: 30px;
-  padding: 20px;
-  background: rgba(255,255,255,0.02);
-  border-radius: var(--radius);
-  border-left: 4px solid var(--accent);
-}
-.competence-category h3 {
-  color: var(--accent);
-  font-size: 18px;
-  margin-bottom: 12px;
-  font-weight: 600;
-}
+
+.skill:hover { background: rgba(14,165,164,0.2); border-color: var(--accent); }
 
 /* ============================================================
-   PROJETS
+   CARTES (Projets / Certifs)
 ============================================================ */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 18px;
   margin-top: 20px;
 }
+
 .card {
   background: var(--card);
   padding: 18px;
@@ -281,67 +204,45 @@ section { scroll-margin-top: 100px; }
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 22px rgba(0,0,0,0.45);
-}
+
+.card:hover { transform: translateY(-4px); box-shadow: 0 8px 22px rgba(0,0,0,0.45); }
 .card h3 { color: var(--accent-2); }
 .meta { color: var(--muted); font-size: 13px; margin: 6px 0; }
-.links a {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 13px;
-}
-.links a:hover { text-decoration: underline; }
 
 /* ============================================================
    CERTIFICATIONS
 ============================================================ */
-#certifications h2 { color: #ffffff; margin-bottom: 18px; }
-.certifications-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
-  margin-top: 20px;
+.cert-card {
+  display: block;
+  text-align: center;
+  cursor: pointer;
 }
-#certifications .card h3 { color: var(--accent-2); }
-#certifications .meta { font-size: 13px; color: var(--muted); }
+
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(14,165,164,0.25);
+}
+
+#certifications .rounded-img {
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 8px;
+}
 
 /* ============================================================
    VEILLE TECHNOLOGIQUE
 ============================================================ */
-#veille p {
-  max-width: 800px;
-  margin-bottom: 12px;
-}
-.veille-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0 30px;
-  font-size: 14px;
-}
-.veille-table th, .veille-table td {
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 10px 14px;
-  text-align: left;
-}
-.veille-table th {
-  background: rgba(14,165,164,0.1);
-  color: var(--accent);
-  font-weight: 600;
-}
-.veille-table tr:nth-child(even) {
-  background: rgba(255,255,255,0.02);
-}
-.rounded-img {
-  width: 100%;
-  border-radius: var(--radius);
-  margin-bottom: 8px;
+.veille-btn-container {
+  text-align: center;
+  margin-top: 25px;
 }
 
 /* ============================================================
-   CONTACT / FORMULAIRES
+   FORMULAIRES
 ============================================================ */
 form label {
   display: block;
@@ -349,6 +250,7 @@ form label {
   color: var(--muted);
   font-size: 14px;
 }
+
 input[type="text"], textarea {
   width: 100%;
   padding: 10px;
@@ -357,94 +259,64 @@ input[type="text"], textarea {
   background: rgba(255,255,255,0.03);
   color: var(--text);
 }
+
 textarea { resize: vertical; }
+
 .form-actions {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
   margin-top: 12px;
 }
+
+/* ============================================================
+   BOUTONS
+============================================================ */
 .btn {
   display: inline-block;
   padding: 10px 14px;
   border-radius: 10px;
-  text-decoration: none;
   font-weight: 600;
   font-size: 14px;
   cursor: pointer;
   transition: all 0.25s ease;
   border: 1px solid rgba(255,255,255,0.06);
 }
+
 .btn.primary {
-  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
   color: #042027;
   border: none;
 }
+
 .btn.primary:hover { opacity: 0.9; }
-.btn.ghost {
-  background: transparent;
-  color: var(--text);
-}
+.btn.ghost { background: transparent; color: var(--text); }
 .btn.ghost:hover { background: rgba(14,165,164,0.1); }
 
 /* ============================================================
-   FOOTER — ALIGNEMENT GLOBAL CENTRÉ ET STYLE TECH
+   FOOTER
 ============================================================ */
 .site-footer {
-  width: 100%;
-  padding: 30px 0;
+  padding: 20px 0;
+  text-align: center;
+  color: var(--muted);
   border-top: 1px solid rgba(255,255,255,0.05);
-  background: transparent;
-  color: var(--muted);
-  font-size: 14px;
-
-  /* Centrage parfait sur toute la largeur */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  font-size: 13px;
 }
 
-.site-footer .container {
-  width: 100%;
-  max-width: none; /* empêche le recentrage sur 1100px */
-  margin: 0;
-  padding: 0;
-}
-
-.site-footer p {
-  margin: 0;
-  color: var(--muted);
-  text-align: center;
-}
-
-.site-footer a {
-  color: var(--accent);
-  text-decoration: none;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.site-footer a:hover {
-  color: var(--accent-2);
-  text-shadow: 0 0 8px var(--accent-2);
-}
-
-/* Icônes sociales */
 .social-links {
-  margin-top: 14px;
   display: flex;
+  gap: 15px;
   justify-content: center;
-  align-items: center;
-  gap: 20px;
+  margin-top: 10px;
 }
 
 .social-links a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: rgba(255,255,255,0.05);
   color: var(--muted);
@@ -453,8 +325,8 @@ textarea { resize: vertical; }
 
 .social-links a:hover {
   color: var(--accent);
-  background: rgba(14,165,164,0.15);
-  transform: translateY(-4px);
+  background: rgba(14,165,164,0.1);
+  transform: translateY(-3px);
 }
 
 /* ============================================================
@@ -465,6 +337,7 @@ section {
   transform: translateY(30px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
+
 section.visible {
   opacity: 1;
   transform: translateY(0);
@@ -490,337 +363,3 @@ section.visible {
   .nav-list.show { display: flex; }
   .parcours-grid { grid-template-columns: 1fr; gap: 30px; }
 }
-/* ===========================
-   Certifications interactives
-=========================== */
-.cert-card {
-  cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.cert-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(14,165,164,0.25);
-}
-
-/* Modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.85);
-  justify-content: center;
-  align-items: center;
-}
-.modal-content {
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 20px;
-  text-align: center;
-  position: relative;
-  max-width: 600px;
-}
-.modal-img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 12px;
-}
-.close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 28px;
-  color: var(--muted);
-  cursor: pointer;
-}
-.close:hover { color: var(--accent); }
-.cert-card {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.cert-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(14,165,164,0.25);
-}
-.cert-card h3 {
-  color: var(--accent-2);
-}
-/* ============================================================
-   Ajustement visuel — Certifications
-============================================================ */
-#certifications .rounded-img {
-  width: 100%;
-  height: 140px;            /* ↓ Réduit la hauteur des logos */
-  object-fit: contain;      /* Garde les proportions sans déformation */
-  border-radius: var(--radius);
-  margin-bottom: 10px;
-  background: rgba(255, 255, 255, 0.02); /* optionnel : fond léger */
-  padding: 8px;             /* petit espace autour des logos */
-}
-
-#certifications .card {
-  padding: 16px;
-  min-height: 240px;        /* assure une hauteur proche des projets */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-/* ============================================================
-   Harmonisation visuelle — Section Projets / Certifications
-   (style uniforme, effet néon, cliquables)
-============================================================ */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
-  margin-top: 20px;
-  justify-items: center;
-}
-
-.project-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--card);
-  color: var(--text);
-  text-decoration: none;
-  border-radius: var(--radius);
-  padding: 24px 20px;
-  width: 100%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
-  border: 1px solid rgba(14, 165, 164, 0.15);
-}
-
-.project-card h3 {
-  color: var(--accent-2);
-  font-size: 18px;
-  margin: 0;
-  text-align: center;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-/* Effet néon turquoise au survol */
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(14, 165, 164, 0.25);
-  border-color: var(--accent);
-}
-
-/* Uniformisation avec les vignettes certifications */
-#projects .card {
-  min-height: 240px;
-}
-/* ============================================================
-   Harmonisation visuelle — Projets alignés sur Certifications
-============================================================ */
-.projects-grid {
-  display: flex;
-  justify-content: center;        /* centre les vignettes horizontalement */
-  flex-wrap: wrap;
-  gap: 18px;
-  margin-top: 20px;
-}
-
-.project-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--card);
-  color: var(--text);
-  text-decoration: none;
-  border-radius: var(--radius);
-  padding: 16px;
-  width: 320px;                   /* même largeur que les certifs */
-  min-height: 240px;              /* même hauteur que les certifs */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
-  border: 1px solid rgba(14, 165, 164, 0.15);
-}
-
-.project-card h3 {
-  color: var(--accent-2);
-  font-size: 18px;
-  text-align: center;
-  text-decoration: none;
-  font-weight: 600;
-  margin: 0;
-}
-
-/* Effet néon turquoise au survol */
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(14, 165, 164, 0.25);
-  border-color: var(--accent);
-}
-
-/* Responsive — les cartes s'empilent sur mobile */
-@media (max-width: 900px) {
-  .projects-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-  .project-card {
-    width: 90%;
-  }
-}
-/* ============================================================
-   VEILLE INFORMATIONNELLE — MISE À JOUR VISUELLE
-============================================================ */
-
-/* Section veille : fond léger + structure claire */
-#veille {
-  background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.02));
-  border-top: 1px solid rgba(255,255,255,0.05);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-/* Titre principal */
-#veille h2 {
-  color: #ffffff;
-  font-size: 26px;
-  margin-bottom: 20px;
-}
-
-/* Sous-titres (ex: Dispositif de veille, Thèmes surveillés, etc.) */
-#veille h3 {
-  color: var(--accent);
-  margin-top: 35px;
-  margin-bottom: 12px;
-  font-size: 20px;
-  border-left: 4px solid var(--accent);
-  padding-left: 10px;
-  font-weight: 600;
-}
-
-/* Sous-sous-titres (ex: Cybersécurité, Administration systèmes) */
-#veille h4 {
-  color: var(--accent-2);
-  font-size: 17px;
-  margin-top: 18px;
-  margin-bottom: 6px;
-  font-weight: 600;
-}
-
-/* Paragraphes */
-#veille p {
-  color: var(--text);
-  max-width: 850px;
-  margin-bottom: 10px;
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-/* Listes des outils / thèmes */
-#veille ul.competence-list {
-  margin-top: 10px;
-  margin-left: 22px;
-  margin-bottom: 14px;
-}
-
-#veille ul.competence-list li {
-  margin-bottom: 6px;
-  color: var(--text);
-  line-height: 1.5;
-}
-
-/* Tableau de bord — vignettes */
-#veille .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 18px;
-  margin-top: 20px;
-}
-
-#veille .card {
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 16px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#veille .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(14,165,164,0.25);
-}
-
-#veille .rounded-img {
-  width: 100%;
-  height: 150px;
-  object-fit: contain;
-  border-radius: var(--radius);
-  margin-bottom: 10px;
-  background: rgba(255,255,255,0.02);
-  padding: 8px;
-}
-
-/* Texte sous les vignettes */
-#veille .meta {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-/* Responsive : aligne mieux sur mobile */
-@media (max-width: 800px) {
-  #veille h2 { text-align: center; }
-  #veille h3, #veille h4 { border: none; padding-left: 0; text-align: center; }
-  #veille p { text-align: justify; }
-}
-/* ============================================================
-   INTÉGRATION RAINDROP EMBED — STYLE COMPACT
-============================================================ */
-.veille-embed {
-  margin-top: 20px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(14,165,164,0.15);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  max-width: 850px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.veille-embed.small iframe {
-  height: 280px !important;
-}
-
-.veille-embed:hover {
-  box-shadow: 0 8px 22px rgba(14,165,164,0.25);
-  transform: translateY(-2px);
-}
-/* ============================================================
-   Bouton veille technologique simple
-============================================================ */
-.veille-btn-container {
-  text-align: center;
-  margin-top: 25px;
-}
-
-.veille-btn-container .btn.primary {
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  color: #042027;
-  font-weight: 600;
-  padding: 12px 22px;
-  border-radius: 999px;
-  box-shadow: 0 0 15px rgba(14,165,164,0.25);
-  transition: all 0.3s ease;
-}
-
-.veille-btn-container .btn.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 25px rgba(14,165,164,0.6);
-}
-

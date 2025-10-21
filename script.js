@@ -1,7 +1,8 @@
-/* ============================================================
-   SCRIPT PRINCIPAL - PORTFOLIO THOMAS LE FLOHIC
-   Gère : navigation, défilement fluide, année dynamique, animations
-============================================================ */
+
+// ============================================================
+// SCRIPT PRINCIPAL - PORTFOLIO THOMAS LE FLOHIC
+// Gère : menu mobile, scroll fluide, année dynamique, animations
+// ============================================================
 
 // === MENU MOBILE ===
 const navToggle = document.getElementById("nav-toggle");
@@ -14,7 +15,6 @@ if (navToggle && navList) {
     navList.classList.toggle("show");
   });
 
-  // Ferme le menu mobile après un clic sur un lien
   document.querySelectorAll(".nav-list a").forEach(link => {
     link.addEventListener("click", () => {
       navList.classList.remove("show");
@@ -30,35 +30,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const target = document.getElementById(targetId);
     if (target) {
       e.preventDefault();
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   });
 });
 
 // === ANNÉE AUTOMATIQUE DU FOOTER ===
 const yearSpan = document.getElementById("year");
-if (yearSpan) {
-  yearSpan.textContent = new Date().getFullYear();
-}
+if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
 // === ANIMATION D’APPARITION DES SECTIONS ===
-const observerOptions = {
-  threshold: 0.15 // déclenche l’apparition quand 15 % de la section est visible
-};
+const observerOptions = { threshold: 0.15 };
 
 const observer = new IntersectionObserver((entries, obs) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("visible");
-      obs.unobserve(entry.target); // évite de rejouer l’animation
+      obs.unobserve(entry.target);
     }
   });
 }, observerOptions);
 
-// Sélectionne toutes les sections pour les animer
-document.querySelectorAll("section").forEach(section => {
-  observer.observe(section);
-});
+document.querySelectorAll("section").forEach(section => observer.observe(section));

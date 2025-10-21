@@ -38,6 +38,7 @@ body {
 h1, h2, h3, h4 {
   font-weight: 700;
   line-height: 1.3;
+  color: #ffffff; /* Tous les titres en blanc */
 }
 h1 { font-size: 32px; margin-bottom: 8px; }
 h2 { font-size: 24px; margin-bottom: 12px; }
@@ -45,7 +46,7 @@ h3 { font-size: 18px; margin-bottom: 8px; }
 
 p, li { font-size: 15px; color: var(--text); }
 .muted { color: var(--muted); }
-strong { color: var(--accent); }
+strong, a { color: var(--accent); }
 
 /* ============================================================
    HEADER / NAVIGATION
@@ -132,14 +133,14 @@ strong { color: var(--accent); }
 section { scroll-margin-top: 100px; }
 
 /* ============================================================
-   PRÉSENTATION
+   PRÉSENTATION PERSONNELLE
 ============================================================ */
 #presentation p {
   max-width: 850px;
   margin-bottom: 14px;
 }
 #presentation h2 {
-  color: var(--accent);
+  color: #ffffff;
   margin-bottom: 24px;
   text-align: left;
 }
@@ -153,7 +154,7 @@ section { scroll-margin-top: 100px; }
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 #formation h2 {
-  color: var(--accent);
+  color: #ffffff;
   margin-bottom: 18px;
 }
 #formation ul {
@@ -202,8 +203,8 @@ section { scroll-margin-top: 100px; }
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 #metiers h2 {
-  color: var(--accent);
-  margin-bottom: 12px;
+  color: #ffffff;
+  margin-bottom: 16px;
 }
 #metiers .muted {
   margin-bottom: 18px;
@@ -297,7 +298,7 @@ section { scroll-margin-top: 100px; }
 /* ============================================================
    CERTIFICATIONS
 ============================================================ */
-#certifications h2 { color: var(--accent); margin-bottom: 18px; }
+#certifications h2 { color: #ffffff; margin-bottom: 18px; }
 .certifications-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -422,6 +423,19 @@ textarea { resize: vertical; }
 }
 
 /* ============================================================
+   ANIMATIONS D’APPARITION
+============================================================ */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
    RESPONSIVE
 ============================================================ */
 @media (max-width: 900px) {
@@ -440,4 +454,85 @@ textarea { resize: vertical; }
   }
   .nav-list.show { display: flex; }
   .parcours-grid { grid-template-columns: 1fr; gap: 30px; }
+}
+/* ===========================
+   Certifications interactives
+=========================== */
+.cert-card {
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(14,165,164,0.25);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  max-width: 600px;
+}
+.modal-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  color: var(--muted);
+  cursor: pointer;
+}
+.close:hover { color: var(--accent); }
+.cert-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(14,165,164,0.25);
+}
+.cert-card h3 {
+  color: var(--accent-2);
+}
+/* ============================================================
+   Ajustement visuel — Certifications
+============================================================ */
+#certifications .rounded-img {
+  width: 100%;
+  height: 140px;            /* ↓ Réduit la hauteur des logos */
+  object-fit: contain;      /* Garde les proportions sans déformation */
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.02); /* optionnel : fond léger */
+  padding: 8px;             /* petit espace autour des logos */
+}
+
+#certifications .card {
+  padding: 16px;
+  min-height: 240px;        /* assure une hauteur proche des projets */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

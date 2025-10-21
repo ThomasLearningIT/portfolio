@@ -52,3 +52,44 @@ const observer = new IntersectionObserver((entries, obs) => {
 }, observerOptions);
 
 document.querySelectorAll("section").forEach(section => observer.observe(section));
+// === FORMULAIRE DE CONTACT (EmailJS) ===
+(function() {
+  emailjs.init({ publicKey: "_pikDWEySDLUt-GEM" });
+})();
+
+const contactForm = document.getElementById("contact-form");
+const formMessage = document.getElementById("form-message");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const formData = {
+      from_name: document.getElementById("name").value,
+      message: document.getElementById("message").value,
+    };
+
+    emailjs.send("service_xijvu9j", "template_portfolio", formData)
+      .then(() => {
+        showFormMessage("✅ Message envoyé avec succès !", "success");
+        contactForm.reset();
+      })
+      .catch(() => {
+        showFormMessage("❌ Une erreur est survenue. Réessaie plus tard.", "error");
+      });
+  });
+}
+
+function showFormMessage(text, type) {
+  if (!formMessage) return;
+  formMessage.textContent = text;
+  formMessage.className = `form-message ${type}`;
+  formMessage.style.opacity = "1";
+
+  setTimeout(() => {
+    formMessage.style.opacity = "0";
+    setTimeout(() => {
+      formMessage.style.display = "none";
+    }, 400);
+  }, 3500);
+}

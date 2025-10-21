@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="fr">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -188,20 +189,41 @@
   </section>
       
   <section id="metiers" class="section">
-    <div class="container">
-      <h2>Métiers visés</h2>
-      <p class="muted">Métiers accessibles après le BTS SIO option SISR.</p>
-      <ul class="competence-list">
-        <li><strong>Technicien systèmes et réseaux :</strong> gestion du parc, support utilisateur, installation de serveurs.</li>
-        <li><strong>Administrateur réseau :</strong> configuration d’équipements Cisco, gestion des VLAN, sécurité et supervision réseau.</li>
-        <li><strong>Expert en cybersécurité :</strong> protection avancée des systèmes, détection d’intrusions et mise en œuvre de stratégies de défense.</li>
-      </ul>
-      <p>
-        🔗 Carte heuristique métier :
-        <a href="images/carte.png" target="_blank" rel="noopener" style="color:var(--accent)">Voir la carte heuristique</a>
-      </p>
+  <div class="container">
+    <h2>Métiers visés</h2>
+    <p class="muted">
+      Métiers accessibles après le <strong>BTS SIO — option SISR</strong>. 
+      Les intitulés ci-dessous correspondent à une progression réaliste : du premier poste vers des fonctions plus spécialisées.
+    </p>
+
+    <ul class="competence-list" style="margin-top:8px">
+      <li>
+        <strong>Technicien systèmes et réseaux</strong> — support utilisateur, gestion du parc, installation/maintenance des postes et serveurs, 
+        interventions de proximité, ouverture de tickets et escalade.
+      </li>
+      <li>
+        <strong>Administrateur réseau</strong> — configuration d’équipements (Cisco/Mikrotik), VLAN, DHCP/DNS, routage, supervision, 
+        sauvegardes et durcissement des services.
+      </li>
+      <li>
+        <strong>Expert en cybersécurité</strong> (<em>objectif à long terme</em>) — protection avancée des systèmes, veille et gestion des vulnérabilités (CVE), 
+        détection d’intrusions, réponse à incident, mise en œuvre de stratégies de défense.
+      </li>
+    </ul>
+
+    <div class="form-actions" style="margin-top:14px">
+      <a 
+        href="images/carte.png" 
+        target="_blank" 
+        rel="noopener" 
+        class="btn primary"
+        aria-label="Ouvrir la carte heuristique des métiers"
+      >
+        Voir la carte heuristique des métiers
+      </a>
     </div>
-  </section>
+  </div>
+</section>
 
   <section id="skills" class="section alt">
     <div class="container">
@@ -302,65 +324,97 @@
   </section>
 
   <section id="veille" class="section alt">
-    <div class="container">
-      <h2>Veille informationnelle</h2>
-      <p>
-        Dans le cadre du <strong>BTS SIO – option SISR</strong>, j’ai mis en place une veille technologique
-        afin de suivre les évolutions dans les domaines de l’administration des systèmes, du réseau
-        et de la cybersécurité.
-      </p>
+  <div class="container">
+    <h2>Veille technologique</h2>
 
-      <h3>🔧 Dispositif de veille</h3>
-      <p>J’utilise deux outils principaux pour centraliser et organiser ma veille :</p>
-      <ul class="competence-list">
-        <li><strong>Inoreader</strong> — agrégateur de flux RSS pour suivre les actualités techniques.</li>
-        <li><strong>Raindrop.io</strong> — outil de classement thématique des liens collectés.</li>
-      </ul>
+    <p>
+      Dans le cadre du <strong>BTS SIO – option SISR</strong>, j’ai mis en place une veille pour suivre les évolutions
+      des <strong>systèmes</strong>, des <strong>réseaux</strong> et de la <strong>cybersécurité</strong>. 
+      Objectifs : rester à jour, identifier les bonnes pratiques/procédures et repérer rapidement les vulnérabilités majeures.
+    </p>
 
-      <h3>📚 Thèmes surveillés</h3>
-      <h4>1. Cybersécurité des réseaux</h4>
-      <p>
-        Protection des infrastructures réseau contre les attaques et les intrusions. 
-        Ce thème correspond à mon objectif professionnel : devenir administrateur réseau spécialisé en sécurité.
-      </p>
+    <h3>🔧 Dispositif et outils</h3>
+    <ul class="competence-list">
+      <li>
+        <strong>Feedly</strong> — agrégateur RSS pour centraliser des sources fiables (CERT-FR, Shadowserver, 
+        The Hacker News, Microsoft Security Blog, Cisco/Talos, LeMagIT, etc.).
+      </li>
+      <li>
+        <strong>Raindrop.io</strong> — classement thématique des liens (dossiers <em>Réseau</em>, <em>Systèmes</em>, 
+        <em>Cybersécurité</em>…), tags et notes rapides pour préparer les synthèses.
+      </li>
+      <li>
+        <strong>Veille YouTube</strong> — chaînes tutoriels & actu (<em>NetworkChuck</em>, <em>Xavki</em>, 
+        <em>John Hammond</em>, <em>13Cubed</em>…) intégrées dans Feedly dès que possible ou suivies par playlist dédiée.
+      </li>
+      <li>
+        <strong>Alertes Google</strong> — mots-clés ciblés (CVE, « pfSense exploit », « AD hardening », « GPO security », etc.).
+      </li>
+    </ul>
 
-      <h4>2. Administration et supervision des systèmes</h4>
-      <p>
-        Étude des outils et méthodes permettant de déployer, maintenir et surveiller des serveurs Windows ou Linux.
-        Thème choisi pour approfondir la partie infrastructure du BTS SIO SISR.
-      </p>
+    <h3>🗂️ Méthode (cycle court)</h3>
+    <ul class="competence-list">
+      <li><strong>Collecte</strong> quotidienne dans Feedly + alertes Google.</li>
+      <li><strong>Filtrage</strong> : lecture rapide, vérification de la source, conservation des références utiles.</li>
+      <li><strong>Organisation</strong> : enregistrement sur Raindrop.io (dossier + tags + note de contexte).</li>
+      <li><strong>Synthèse</strong> mensuelle : 4–8 points clés, impacts et actions possibles (intégrable au portfolio).</li>
+    </ul>
 
-      <div class="veille-btn-container">
-        <a href="https://raindrop.io/leflohicthomas/veille-technologique-62275295" target="_blank" rel="noopener" class="btn primary">
-          🔗 Consulter ma veille technologique
-        </a>
-      </div>
+    <h3>📚 Thèmes surveillés</h3>
+    <h4>1) Cybersécurité réseau</h4>
+    <p>
+      Protection des infrastructures : vulnérabilités (CVE), mises à jour critiques, détection d’intrusion, 
+      durcissement (pare-feu, IDS/IPS), réponse à incident. Choisi car directement lié à mon objectif pro
+      et aux attentes SISR (disponibilité, intégrité, confidentialité).
+    </p>
+
+    <h4>2) Administration & supervision systèmes</h4>
+    <p>
+      Déploiement/maintenance Windows & Linux, durcissement AD/GPO, sauvegardes, supervision (GLPI/Zabbix),
+      services (DHCP/DNS/HTTP). Vise l’opérationnel de l’option SISR (exploitation, continuité de service).
+    </p>
+
+    <div style="margin-top:18px">
+      <a
+        href="https://raindrop.io/leflohicthomas/veille-technologique-62275295"
+        class="btn primary"
+        target="_blank" rel="noopener"
+      >
+        🔗 Consulter ma veille centralisée (Raindrop.io)
+      </a>
     </div>
-  </section>
+  </div>
+</section>
 
   <section id="contact" class="section">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Pour toute question ou opportunité :</p>
-      <form id="contact-form" onsubmit="sendMail(event)">
-        <label>
-          Votre nom
-          <input type="text" name="name" required />
-        </label>
-        <label>
-          Votre message
-          <textarea name="message" rows="4" required></textarea>
-        </label>
-        <div class="form-actions">
-          <button class="btn primary" type="submit">Envoyer (Email)</button>
-          <a class="btn ghost" href="mailto:thomas.exemple@mail.com">Mail direct</a>
-        </div>
-        <p class="muted small">
-          Le formulaire ouvre votre client mail. Un envoi via API pourra être ajouté plus tard.
-        </p>
-      </form>
-    </div>
-  </section>
+  <div class="container">
+    <h2>Contact</h2>
+    <p>Pour toute question ou opportunité :</p>
+
+    <div id="form-message" class="form-message"></div>
+
+    
+    <form id="contact-form">
+      <label>
+        Votre nom
+        <input type="text" id="name" name="name" required />
+      </label>
+
+      <label>
+        Votre message
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </label>
+
+      <div class="form-actions">
+        <button class="btn primary" type="submit">Envoyer</button>
+      </div>
+
+      <p class="muted small">
+        Ce formulaire envoie un email directement via EmailJS.
+      </p>
+    </form>
+  </div>
+</section>
 
   <footer class="site-footer">
     <div class="container">

@@ -459,3 +459,62 @@ section.visible {
   .nav-list.show { display: flex; }
   .parcours-grid { grid-template-columns: 1fr; gap: 30px; }
 }
+#formation p {
+  margin-bottom: 14px; /* espace entre les deux premiers paragraphes */
+  line-height: 1.75;   /* lisibilité améliorée */
+  max-width: 850px;
+}
+
+#formation ul {
+  margin-top: 18px;    /* espace entre le texte et la liste */
+  margin-left: 25px;
+  line-height: 1.8;
+}
+/* ============================================================
+   SECTION COMPÉTENCES — VERSION CLEAN BADGES MINIMALISTES
+============================================================ */
+.skills-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.skill-group h3 {
+  font-size: 1.2rem;
+  color: var(--accent);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.skills-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills-badges span {
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  color: #ccefff;
+  padding: 8px 14px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.skills-badges span:hover {
+  background: rgba(0, 255, 255, 0.15);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .skills-section {
+    gap: 30px;
+  }
+  .skills-badges span {
+    font-size: 0.85rem;
+    padding: 7px 12px;
+  }
+}

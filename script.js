@@ -1,9 +1,3 @@
-
-// ============================================================
-// SCRIPT PRINCIPAL - PORTFOLIO THOMAS LE FLOHIC
-// Gère : menu mobile, scroll fluide, année dynamique, animations
-// ============================================================
-
 // === MENU MOBILE ===
 const navToggle = document.getElementById("nav-toggle");
 const navList = document.getElementById("nav-list");

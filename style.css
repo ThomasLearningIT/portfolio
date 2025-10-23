@@ -1,20 +1,15 @@
-/* ============================================================
-   THEME GLOBAL — NOIR & BLANC MODERNE 2025
-============================================================ */
 :root {
-  --bg: #000;               /* fond noir absolu */
-  --card: #0a0a0a;          /* fond des cartes */
-  --muted: #9b9b9b;         /* texte secondaire */
-  --text: #d1d1d1;          /* texte principal */
-  --accent: #fff;           /* blanc pur pour boutons / titres */
+  --bg: #000;               
+  --card: #0a0a0a;          
+  --muted: #9b9b9b;         
+  --text: #d1d1d1;          
+  --accent: #fff;           
   --radius: 12px;
   --max-width: 1100px;
   --gap: 20px;
 }
 
-/* ============================================================
-   BASE
-============================================================ */
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html, body {
@@ -46,9 +41,6 @@ p, li { font-size: 15px; color: var(--text); }
 a { color: #fff; text-decoration: none; transition: color 0.3s ease; }
 a:hover { color: #bbb; }
 
-/* ============================================================
-   HEADER / NAVIGATION
-============================================================ */
 .site-header {
   position: sticky;
   top: 0;
@@ -102,9 +94,6 @@ a:hover { color: #bbb; }
   border-radius: 8px;
 }
 
-/* ============================================================
-   HERO
-============================================================ */
 .hero {
   padding: 80px 0 60px;
   background: #000;
@@ -121,18 +110,12 @@ a:hover { color: #bbb; }
 .hero-text { max-width: 700px; }
 .lead { color: var(--muted); font-size: 16px; margin-bottom: 18px; }
 
-/* ============================================================
-   SECTIONS
-============================================================ */
 .section {
   padding: 100px 0;
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 section { scroll-margin-top: 100px; }
 
-/* ============================================================
-   PARCOURS & FORMATION
-============================================================ */
 .parcours-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -159,7 +142,6 @@ section { scroll-margin-top: 100px; }
   border-bottom: 2px solid #fff;
 }
 
-/* === COMPÉTENCES MODERNES (style 2025) === */
 .skills-grid-modern {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -209,9 +191,6 @@ section { scroll-margin-top: 100px; }
   line-height: 1;
 }
 
-/* ============================================================
-   CARTES (Projets / Certifs)
-============================================================ */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -232,9 +211,6 @@ section { scroll-margin-top: 100px; }
   box-shadow: 0 8px 24px rgba(255,255,255,0.1);
 }
 
-/* ============================================================
-   CERTIFICATIONS — AVEC GLOW ARC-EN-CIEL
-============================================================ */
 .cert-card {
   display: block;
   text-align: center;
@@ -285,9 +261,6 @@ section { scroll-margin-top: 100px; }
   padding: 8px;
 }
 
-/* ============================================================
-   VEILLE TECHNOLOGIQUE
-============================================================ */
 #veille h3, #veille h4 { color: #fff; }
 #veille p, #veille ul { margin-bottom: 14px; color: var(--text); }
 
@@ -296,9 +269,6 @@ section { scroll-margin-top: 100px; }
   margin-top: 25px;
 }
 
-/* ============================================================
-   FORMULAIRE
-============================================================ */
 form label {
   display: block;
   margin-bottom: 8px;
@@ -316,9 +286,6 @@ input[type="text"], textarea {
 }
 textarea { resize: vertical; }
 
-/* ============================================================
-   BOUTONS
-============================================================ */
 .btn {
   display: inline-block;
   padding: 10px 16px;
@@ -348,9 +315,6 @@ textarea { resize: vertical; }
   color: #000;
 }
 
-/* ============================================================
-   FOOTER
-============================================================ */
 .site-footer {
   padding: 30px 0;
   text-align: center;
@@ -383,9 +347,6 @@ textarea { resize: vertical; }
   transform: translateY(-3px);
 }
 
-/* ============================================================
-   ANIMATIONS D’APPARITION
-============================================================ */
 section {
   opacity: 0;
   transform: translateY(30px);
@@ -396,9 +357,6 @@ section.visible {
   transform: translateY(0);
 }
 
-/* ============================================================
-   RESPONSIVE
-============================================================ */
 @media (max-width: 900px) {
   .grid { grid-template-columns: 1fr; }
   #nav-toggle { display: inline-block; }

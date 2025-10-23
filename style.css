@@ -477,3 +477,69 @@ section.visible {
   max-width: 220px;
   margin: 0 auto;
 }
+/* === Responsive timeline === */
+@media screen and (max-width: 768px) {
+  .timeline-premium {
+    padding: 50px 10px;
+  }
+
+  .timeline-track {
+    flex-direction: column; /* ✅ La timeline devient verticale sur mobile */
+    align-items: center;
+    gap: 40px;
+    overflow: visible;
+  }
+
+  .timeline-track::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+    transform: translateX(-50%);
+  }
+
+  .timeline-step {
+    width: 90%;
+    text-align: center;
+    transform: none !important;
+  }
+
+  .timeline-icon {
+    margin-bottom: 15px;
+  }
+
+  .timeline-step:hover .timeline-icon {
+    transform: scale(1.05);
+  }
+
+  .timeline-step h3 {
+    font-size: 1rem;
+  }
+
+  .timeline-step p {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+}
+
+ul {
+  list-style: disc;
+  padding-left: 20px; 
+  margin-left: 10px;
+}
+
+li {
+  color: #fff; 
+  line-height: 1.6;
+}
+
+ul li::marker {
+  color: #fff;
+.competence-list li::marker,
+.veille-list li::marker {
+  color: #fff;
+ }
+}
